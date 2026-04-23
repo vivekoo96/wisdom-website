@@ -6,19 +6,21 @@
   --font-display: "Bricolage Grotesque", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-studio-neon: #a3ff12;
-  --color-studio-dark: #080808;
-  --color-studio-surface: #111111;
-  --color-studio-line: #222222;
+  --color-studio-accent: #ff4d00; /* Vivid Vermillion */
+  --color-studio-accent-soft: #ff824d; 
+  --color-studio-dark: #121212; /* Graphite Text */
+  --color-studio-surface: #f3f0e8; /* Soft Parchment */
+  --color-studio-bg: #fdfaf5; /* Warm White */
+  --color-studio-line: #e6e2d9;
 }
 
 @layer base {
   body {
-    @apply bg-studio-dark text-white font-sans antialiased selection:bg-studio-neon selection:text-studio-dark;
+    @apply bg-studio-bg text-studio-dark font-sans antialiased selection:bg-studio-accent selection:text-white;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-white uppercase;
+    @apply font-display tracking-tight text-studio-dark uppercase;
   }
 }
 
@@ -27,12 +29,12 @@
 }
 
 .text-stroke {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  -webkit-text-stroke: 1.5px var(--color-studio-dark);
   color: transparent;
 }
 
 .text-stroke:hover {
-  -webkit-text-stroke: 1px var(--color-studio-neon);
+  -webkit-text-stroke: 1.5px var(--color-studio-accent);
 }
 
 .no-scrollbar::-webkit-scrollbar {

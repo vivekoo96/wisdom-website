@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ChatBot from './components/common/ChatBot';
+import WhatsAppButton from './components/common/WhatsAppButton';
 import { useEffect } from 'react';
 
 // Scroll to top on route change
@@ -23,7 +25,7 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   return (
-    <div className="relative overflow-x-hidden selection:bg-studio-neon selection:text-studio-dark min-h-screen flex flex-col">
+    <div className="relative overflow-x-hidden selection:bg-studio-accent selection:text-studio-dark min-h-screen flex flex-col">
       <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
@@ -35,6 +37,8 @@ const AppContent = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <ChatBot />
+      <WhatsAppButton />
       <Footer />
     </div>
   );
