@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-studio-neon: #a3ff12;
+  --color-studio-dark: #080808;
+  --color-studio-surface: #111111;
+  --color-studio-line: #222222;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-dark text-white font-sans antialiased selection:bg-studio-neon selection:text-studio-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-white uppercase;
+  }
+}
+
+.brutalist-border {
+  @apply border border-studio-line;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.text-stroke:hover {
+  -webkit-text-stroke: 1px var(--color-studio-neon);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.mask-fade {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
